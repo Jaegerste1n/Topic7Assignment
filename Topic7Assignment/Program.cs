@@ -18,9 +18,13 @@
             {
                 Console.WriteLine("Nuh Uh");
                 Console.WriteLine("Try AGAIN!!!");
+                Console.ForegroundColor = ConsoleColor.DarkGray;
                 guess = Console.ReadLine().ToLower();
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine();
             }
+            Console.WriteLine("Oh Hey That's Right");
+            
         }
     }
 }
