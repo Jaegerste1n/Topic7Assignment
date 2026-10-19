@@ -32,7 +32,7 @@
             }
             done = false;
             tries = 0;
-            
+
             mystery = generator.Next(0, 11);
             Console.WriteLine("Guess A Number Between 1 And 10");
             while (!done)
@@ -53,7 +53,7 @@
                     done = true;
                 }
             }
-            
+
             Console.WriteLine("I'm Going To Roll Dice Now");
             roll1 = generator.Next(1, 7);
             roll2 = generator.Next(1, 7);
@@ -82,6 +82,22 @@
                 count++;
             }
             Console.WriteLine("That's What You Sound Like");
+
+            int totalTwo = 0;
+            int countTwo = 0;
+            int promptNumber;
+            while (countTwo >= totalTwo)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("No Wait A Number Actually");
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                int.TryParse(Console.ReadLine(), out promptNumber);
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                totalTwo += promptNumber;
+                countTwo++;
+            }
+            Console.WriteLine("Total: " + totalTwo);
+            Console.WriteLine("That's Weird");
 
         }
     }
