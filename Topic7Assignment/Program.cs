@@ -86,7 +86,7 @@
             int totalTwo = 0;
             int countTwo = 0;
             int promptNumber;
-            while (countTwo >= totalTwo)
+            while (countTwo !>= totalTwo)
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("No Wait A Number Actually");
