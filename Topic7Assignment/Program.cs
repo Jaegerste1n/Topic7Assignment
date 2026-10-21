@@ -1,4 +1,6 @@
-﻿namespace Topic7Assignment
+﻿using System.Security.Principal;
+
+namespace Topic7Assignment
 {
     internal class Program
     {
@@ -83,22 +85,98 @@
             }
             Console.WriteLine("That's What You Sound Like");
 
+            int quantity = 3;
+            count = 0;
             int totalTwo = 0;
             int countTwo = 0;
             int promptNumber;
-            while (countTwo !>= totalTwo)
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("I'm going to ask for " + quantity + " nubers and will total them up for you.");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Who Is That Guy");
+
+            while (count < quantity)
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
+
                 Console.WriteLine("No Wait A Number Actually");
                 Console.ForegroundColor = ConsoleColor.DarkGray;
                 int.TryParse(Console.ReadLine(), out promptNumber);
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 totalTwo += promptNumber;
-                countTwo++;
+                count++;
+
             }
             Console.WriteLine("Total: " + totalTwo);
             Console.WriteLine("That's Weird");
 
+            Console.WriteLine("Regardless It's Gambling Time");
+            bool quit = false;
+            string choice;
+            int points = 3;
+            int side;
+            while (!quit)
+            {
+                if (points <= 0)
+                {
+                    Console.WriteLine("You're Broke!");
+
+                    quit = true;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("Points: " + points);
+                    Console.WriteLine("Heads Or Tails Or Quit");
+                    side = generator.Next(0, 3);
+
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    choice = Console.ReadLine().ToLower();
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    if (choice == "heads")
+                    {
+                        if (side == 1)
+                        {
+                            Console.WriteLine("Wow Very Good");
+                            Console.WriteLine("+1 Point");
+                            points++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("The House Always Wins");
+                            Console.WriteLine("-1 Point");
+                            points--;
+                        }
+                    }
+                    else if (choice == "tails")
+                    {
+                        if (side == 2)
+                        {
+                            Console.WriteLine("Wow Very Good");
+                            Console.WriteLine("+1 Point");
+                            points++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("The House Always Wins");
+                            Console.WriteLine("-1 Point");
+                            points--;
+                        }
+                    }
+                    else if (choice == "quit")
+                    {
+                        quit = true;
+                        Console.WriteLine("Fine Be That Way");
+                        Console.WriteLine("Final Score: " + points);
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("That Is Not VALID");
+                    }
+                }
+                
+            }
         }
     }
 }
